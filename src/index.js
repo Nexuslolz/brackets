@@ -23,7 +23,7 @@ module.exports = function check(str, bracketsConfig) {
           stack.push(curr)
         } 
         else if(otherValues.includes(curr)){
-         // stack.push(curr)
+         //]] stack.push(curr)
           count += 1
         } 
         else {
@@ -39,11 +39,11 @@ module.exports = function check(str, bracketsConfig) {
         }
       }
 
-      if(count % 2 === 0){
+      if(count % 2 === 0 && count > 0){
         return true
-      } else if(stack.length === 0 && count === 0){
+      } else if(stack.length === 0 && count % 2 === 0){
         return true
-      } else if(count % 2 > 0 || stack.length > 0) {
+      } else {
         return false
       }
      
